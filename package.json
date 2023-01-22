@@ -1,0 +1,30 @@
+{
+  "name": "@cary-mao/personal.site",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "docs:dev": "vuepress dev docs",
+    "docs:build": "vuepress build docs",
+    "lint": "eslint --cache --ext .js,.vue docs/.vuepress",
+    "fix": "eslint --cache --ext .js,.vue docs/.vuepress --fix"
+  },
+  "lint-staged": {
+    "docs/.vuepress/**/*.{vue|js}": "npm run lint"
+  },
+  "author": "cary-mao",
+  "repository": {
+    "url": "git@github.com:cary-mao/personal.site.git",
+    "type": "git"
+  },
+  "license": "MIT",
+  "devDependencies": {
+    "@vuepress/plugin-nprogress": "^1.9.8",
+    "eslint": "^8.32.0",
+    "eslint-plugin-vue": "^9.9.0",
+    "husky": "^8.0.3",
+    "lint-staged": "^13.1.0",
+    "vuepress": "^1.9.8",
+    "vuepress-plugin-container": "^2.1.5"
+  }
+}

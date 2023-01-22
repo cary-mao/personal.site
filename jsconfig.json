@@ -1,0 +1,18 @@
+{
+    "compilerOptions": {
+        "target": "ES5",
+        "baseUrl": "docs/.vuepress",
+        "paths": {
+            "theme": ["docs/.vuepress/theme"]
+        }
+    },
+    "exclude": [
+        "node_modules",
+        "docs/.vuepress/theme/config.js",
+        "docs/.vuepress/theme/index.js"
+    ],
+    "include": [
+        "docs/.vuepress/theme/**/*.js",
+        "docs/.vuepress/theme/**/*.vue"
+    ]
+}
