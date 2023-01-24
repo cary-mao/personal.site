@@ -1,7 +1,6 @@
 <template>
   <div>
-    <div>Hello World</div>
-    <Content />
+    <Content class="post" />
   </div>
 </template>
 

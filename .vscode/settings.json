@@ -5,4 +5,8 @@
         "javascript",
         "vue"
     ],
+    "stylusSupremacy.insertColons": false,
+    "stylusSupremacy.insertSemicolons": false,
+    "stylusSupremacy.insertBraces": false,
+    "stylusSupremacy.insertNewLineAroundBlocks": false
 }

@@ -4,7 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "docs:dev": "vuepress dev docs",
+    "docs:dev": "vuepress dev docs --temp .temp",
     "docs:build": "vuepress build docs",
     "lint": "eslint --cache --ext .js,.vue docs/.vuepress",
     "fix": "eslint --cache --ext .js,.vue docs/.vuepress --fix"
@@ -19,12 +19,19 @@
   },
   "license": "MIT",
   "devDependencies": {
+    "@vuepress/plugin-active-header-links": "^1.9.8",
+    "@vuepress/plugin-back-to-top": "^1.9.8",
     "@vuepress/plugin-nprogress": "^1.9.8",
+    "dayjs": "^1.11.7",
     "eslint": "^8.32.0",
     "eslint-plugin-vue": "^9.9.0",
     "husky": "^8.0.3",
     "lint-staged": "^13.1.0",
     "vuepress": "^1.9.8",
-    "vuepress-plugin-container": "^2.1.5"
+    "vuepress-plugin-container": "^2.1.5",
+    "vuepress-plugin-smooth-scroll": "^0.0.10"
+  },
+  "dependencies": {
+    "normalize.css": "^8.0.1"
   }
 }

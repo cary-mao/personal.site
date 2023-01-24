@@ -25,12 +25,23 @@ module.exports = (opts, ctx) => {
           type: "danger",
         },
       ],
-      ["@vuepress/nprogress"],
+      "@vuepress/nprogress",
+      "@vuepress/back-to-top",
+      // changed router's scrollBehavior, set the scroll behavior to smoothly scroll to top when router changed
+      "vuepress-plugin-smooth-scroll",
+      [
+        "@vuepress/active-header-links",
+        {
+          sidebarLinkSelector: ".sidebar-link",
+          headerAnchorSelector: ".header-anchor",
+        },
+      ],
+      require("./plugins/vuepress-plugin-filetime"),
     ],
   };
 
   ctx.addPage({
-    permalink: "/posts/",
+    permalink: "/blog/",
     frontmatter: {
       layout: "Posts",
     },
