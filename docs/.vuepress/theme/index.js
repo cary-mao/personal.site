@@ -38,6 +38,14 @@ module.exports = (opts, ctx) => {
       ],
       require("./plugins/vuepress-plugin-filetime"),
     ],
+    markdown: {
+      extendMarkdown: (md) => {
+        md.use(require("markdown-it-prism"), {
+          highlightInlineCode: true,
+          defaultLanguageForUnknown: "shell",
+        });
+      },
+    },
   };
 
   ctx.addPage({

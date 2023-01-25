@@ -65,21 +65,30 @@
 <script>
 let darkTheme = false;
 
+function createThemeTag(url) {
+  const themeLink = document.createElement("link");
+  themeLink.rel = "stylesheet";
+  themeLink.href = url;
+  themeLink.type = "text/css";
+  themeLink.dataset.theme = true;
+  return themeLink;
+}
+
 export default {
   methods: {
     onThemeToggle() {
       darkTheme = !darkTheme;
       if (darkTheme) {
-        const themeLink = document.createElement("link");
-        themeLink.rel = "stylesheet";
-        themeLink.href = this.$withBase("/dark-mode.css");
-        themeLink.type = "text/css";
-        themeLink.dataset.theme = true;
-        document.head.appendChild(themeLink);
+        ["/dark-mode.css"].forEach((url) => {
+          const themeLink = createThemeTag(this.$withBase(url));
+          document.head.appendChild(themeLink);
+        });
       } else {
-        const themeLink = document.head.querySelector("[data-theme]");
-        if (themeLink) {
-          document.head.removeChild(themeLink);
+        const themeLinks = document.head.querySelectorAll("[data-theme]");
+        if (themeLinks) {
+          [].forEach.call(themeLinks, (themeLink) => {
+            document.head.removeChild(themeLink);
+          });
         }
       }
     },
@@ -91,6 +100,35 @@ export default {
 .header
   height var(--navbar-height-large)
   padding-top 3rem
+  .nav
+    padding-top 1.25rem
+    a
+      margin-right 1.5rem
+      padding-bottom 0.25rem
+      font-size 1.05rem
+      font-weight 500
+      color var(--navbar-color)
+      text-decoration none
+      border-bottom 2px solid transparent
+      &:hover
+        color var(--navbar-color-hover)
+      &.active,
+      &:hover
+        &.about
+          border-bottom-color var(--rainbow-1)
+        &.blog
+          border-bottom-color var(--rainbow-2)
+        &.projects
+          border-bottom-color var(--rainbow-3)
+        &.github
+          border-bottom-color var(--rainbow-4)
+    .permalink
+      display inline-flex
+      align-items center
+      object
+        width 1rem
+        height 1rem
+        margin-left 0.25rem
 .logo
     display flex
     align-items center
@@ -103,35 +141,6 @@ export default {
       font-weight 700
       color inherit
       text-decoration none
-.nav
-  padding-top 1.25rem
-  a
-    margin-right 1.5rem
-    padding-bottom 0.25rem
-    font-size 1.05rem
-    font-weight 500
-    color var(--navbar-color)
-    text-decoration none
-    border-bottom 2px solid transparent
-    &:hover
-      color var(--navbar-color-hover)
-    &.active,
-    &:hover
-      &.about
-        border-bottom-color var(--rainbow-1)
-      &.blog
-        border-bottom-color var(--rainbow-2)
-      &.projects
-        border-bottom-color var(--rainbow-3)
-      &.github
-        border-bottom-color var(--rainbow-4)
-  .permalink
-    display inline-flex
-    align-items center
-    object
-      width 1rem
-      height 1rem
-      margin-left 0.25rem
 
 .theme-toggle
   display flex

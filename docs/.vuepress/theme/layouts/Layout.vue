@@ -1,16 +1,25 @@
 <template>
-  <div>
+  <div class="flex space-between">
     <Content class="post" />
+    <Sidebar />
   </div>
 </template>
 
 <script>
+import Sidebar from "../components/Sidebar.vue";
+
 export default {
   name: "Layout",
+  components: {
+    Sidebar,
+  },
   created() {
-    console.log(this.$site.pages, this.$custom);
+    console.log(this.$page);
   },
 };
 </script>
 
-<style></style>
+<style lang="stylus">
+.post
+  max-width 840px
+</style>
