@@ -9,7 +9,7 @@
         rel="noopener noreferrer"
       >
         <span>VuePress</span>
-        <img :src="$withBase('logo-vuepress.png')" alt="VuePress" />
+        <img :src="$withBase('/logo-vuepress.png')" alt="VuePress" />
       </a>
       <a
         href="https://github.com/cary-mao"
@@ -30,7 +30,7 @@
         rel="noopener noreferrer"
       >
         <span>Netlify</span>
-        <img :src="$withBase('logo-netlify.png')" alt="Netlify" />
+        <img :src="$withBase('/logo-netlify.png')" alt="Netlify" />
       </a>
     </nav>
   </footer>

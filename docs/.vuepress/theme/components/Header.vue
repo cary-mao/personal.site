@@ -5,7 +5,7 @@
         <!-- logo -->
         <div class="logo" :title="$themeConfig.logoTitle">
           <img
-            :src="$withBase($themeConfig.logo)"
+            :src="$withBase(`/${$themeConfig.logo}`)"
             :alt="$themeConfig.logoText"
           />
           <router-link to="/">
@@ -43,7 +43,7 @@
             >
               github
               <object
-                :data="$withBase('permalink.svg')"
+                :data="$withBase('/permalink.svg')"
                 type="image/svg+xml"
               ></object>
             </a>

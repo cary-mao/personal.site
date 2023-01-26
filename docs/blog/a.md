@@ -1,3 +1,22 @@
+---
+categories:
+  - asdfasdf
+  - bsdfsdf
+  - sdfsdfawegwee
+  - dasdfsdf
+  - easdfsdf
+  - b
+tags:
+  - asdfsdf
+  - bsdfsdf
+  - csdfsdfsdf
+  - dsdvwe
+  - egsdgsd
+  - ffsdf
+  - gfsdfsf
+  - hsdfsd
+---
+
 # 常用知识，快速查询
 ## 初始化
 ```js

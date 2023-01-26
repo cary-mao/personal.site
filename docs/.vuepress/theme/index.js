@@ -48,12 +48,13 @@ module.exports = (opts, ctx) => {
     },
   };
 
-  ctx.addPage({
-    permalink: "/blog/",
-    frontmatter: {
-      layout: "Posts",
-    },
-  });
+  // ctx.addPage({
+  //   permalink: "/blog/",
+  //   frontmatter: {
+  //     layout: "Posts",
+  //     title: "Writing | Cary Mao",
+  //   },
+  // });
 
   return options;
 };

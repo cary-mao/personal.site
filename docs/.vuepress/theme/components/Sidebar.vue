@@ -19,9 +19,6 @@ export default {
 </script>
 
 <style lang="stylus">
-.sidebar
-  max-width 250px
-  min-width 250px
 .catelog
   position sticky
   background-color var(--card-background-color)

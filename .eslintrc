@@ -23,8 +23,8 @@
         "docs/.vuepress/**/config.js",
         "docs/.vuepress/theme/index.js",
         "docs/.vuepress/theme/plugins/**/*.js",
-        "ignore/",
-        "docs/.vuepress/theme/**/*.vue"
-        // "dos/.vuepress/theme/components/*.vue",
+        "docs/.vuepress/theme/**/*.vue",
+        "docs/.vuepress/data/index.js",
+        "ignore/"
     ]
 }
