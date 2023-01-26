@@ -1,5 +1,5 @@
 <template>
-  <footer class="footer">
+  <footer id="footer">
     <p>Made by {{ $themeConfig.author }}</p>
     <nav>
       <a
@@ -39,7 +39,7 @@
 <script></script>
 
 <style lang="stylus">
-.footer
+#footer
     margin-bottom 1.25rem
     text-align center
     a

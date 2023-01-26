@@ -26,6 +26,13 @@ export default ({ router, siteData }) => {
         layout: "Posts",
       },
     },
+    {
+      path: "/projects/",
+      component: GlobalLayout,
+      meta: {
+        layout: "Projects",
+      },
+    },
   ]);
 
   // normalize frontmatter

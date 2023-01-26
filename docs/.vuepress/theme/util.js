@@ -13,3 +13,13 @@ export function capitalize(str) {
 export function isUndef(v) {
   return typeof v === "undefined";
 }
+
+export function normalizeLang(v) {
+  const map = {
+    html: "HTML",
+    css: "CSS",
+    js: "JavaScript",
+    ts: "TypeScript",
+  };
+  return map[v];
+}

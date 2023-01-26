@@ -1,5 +1,5 @@
 <template>
-  <header class="header">
+  <header id="header">
     <div class="container flex space-between">
       <div>
         <!-- logo -->
@@ -14,8 +14,8 @@
         </div>
 
         <!-- nav -->
-        <div class="nav">
-          <nav>
+        <nav>
+          <div class="nav">
             <router-link
               to="/about"
               class="about"
@@ -47,8 +47,8 @@
                 type="image/svg+xml"
               ></object>
             </a>
-          </nav>
-        </div>
+          </div>
+        </nav>
       </div>
       <div class="theme-toggle">
         <button class="circle button" @click="onThemeToggle">
@@ -97,10 +97,11 @@ export default {
 </script>
 
 <style lang="stylus">
-.header
+#header
   height var(--navbar-height-large)
   padding-top 3rem
   .nav
+    display flex
     padding-top 1.25rem
     a
       margin-right 1.5rem

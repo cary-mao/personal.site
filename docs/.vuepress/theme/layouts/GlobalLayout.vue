@@ -14,17 +14,19 @@
 import GlobalHeader from "../components/Header.vue";
 import GlobalFooter from "../components/Footer.vue";
 import Posts from "../layouts/Posts.vue";
+import Projects from "./Projects.vue";
 
 export default {
   components: {
     GlobalHeader,
     GlobalFooter,
     Posts,
+    Projects,
   },
   computed: {
     layout() {
-      if (this.$route.meta.layout === "Posts") {
-        return "Posts";
+      if (this.$route.meta.layout) {
+        return this.$route.meta.layout;
       }
       if (this.$page.path) {
         if (this.$frontmatter.layout) {

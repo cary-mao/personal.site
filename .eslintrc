@@ -24,7 +24,7 @@
         "docs/.vuepress/theme/index.js",
         "docs/.vuepress/theme/plugins/**/*.js",
         "docs/.vuepress/theme/**/*.vue",
-        "docs/.vuepress/data/index.js",
+        "docs/.vuepress/data/*.js",
         "ignore/"
     ]
 }

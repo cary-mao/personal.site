@@ -155,6 +155,10 @@ body
     height 0
     border 0.25rem solid transparent
     border-top-color var(--font-color-base)
+.ellipsis
+    text-overflow ellipsis
+    overflow hidden
+    white-space nowrap
 // components
 .sidebar
     max-width 250px
@@ -167,14 +171,14 @@ body
     outline 0
     cursor pointer
 .card-dl
+    padding 1.5rem
     background-color var(--card-background-color)
 .card-dt
     h2
         margin 0
-        padding 1rem
+        margin-bottom 1.5rem
         font-size 1.2rem
 .card-dd
-    padding 0.5rem
     a
         display flex
         justify-content space-between

@@ -1,3 +1,5 @@
+const collections = require("./data/collections");
+
 module.exports = {
   title: "cary-mao",
   description: "My blog",
@@ -6,6 +8,7 @@ module.exports = {
     logoText: "Cary Mao",
     logoTitle: "Cary Mao website",
     author: "Cary Mao",
+    collections,
   },
   // 要重启headers才更新
   markdown: {

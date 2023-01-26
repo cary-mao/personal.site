@@ -41,12 +41,10 @@ export default {
 </script>
 
 <style lang="stylus">
-.tags .dd
-  padding-left .5rem
 .tag-link
   display inline-block
   margin .25rem
-  padding .25rem
+  padding .25rem .4rem
   border 1px solid var(--border-color)
   font-size 14px
   text-decoration none
@@ -55,5 +53,6 @@ export default {
   border-radius .4rem
   &.active,
   &:hover
+    color var(--highlight-color)
     border-color var(--highlight-color)
 </style>
