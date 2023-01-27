@@ -9,6 +9,8 @@ module.exports = (options) => {
     extendPageData($page) {
       const { _filePath } = $page;
 
+      if (!_filePath) return;
+
       const stats = fs.statSync(_filePath);
       // birth time, created time
       // access time, read or exec
