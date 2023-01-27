@@ -23,3 +23,15 @@ export function normalizeLang(v) {
   };
   return map[v];
 }
+
+let repos;
+export function getGithubRepos(user) {
+  if (repos) {
+    return Promise.resolve(repos);
+  }
+
+  return fetch(`https://api.github.com/users/${user}/repos`).then((res) => {
+    repos = res.json();
+    return repos;
+  });
+}

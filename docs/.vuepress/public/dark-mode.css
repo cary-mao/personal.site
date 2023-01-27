@@ -57,4 +57,5 @@
   --error: #b0292c;
   --code-link-hover: var(--link-hover-color);
   --highlight-code-color: rgb(116, 207, 136, 0.1);
+  --fork: var(--blue-1);
 }

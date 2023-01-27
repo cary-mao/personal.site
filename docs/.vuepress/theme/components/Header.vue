@@ -34,19 +34,13 @@
               :class="{ active: $route.path === '/projects' }"
               >projects</router-link
             >
-            <a
-              href="https://github.com/cary-mao"
-              class="permalink github"
+            <Permalink
+              to="https://github.com/cary-mao"
+              class="github"
               :class="{ active: $route.path === '/github' }"
-              target="_blank"
-              rel="noopener noreferrer"
             >
               github
-              <object
-                :data="$withBase('/permalink.svg')"
-                type="image/svg+xml"
-              ></object>
-            </a>
+            </Permalink>
           </div>
         </nav>
       </div>
@@ -63,6 +57,8 @@
 </template>
 
 <script>
+import Permalink from "./Permalink.vue";
+
 let darkTheme = false;
 
 function createThemeTag(url) {
@@ -75,6 +71,9 @@ function createThemeTag(url) {
 }
 
 export default {
+  components: {
+    Permalink,
+  },
   methods: {
     onThemeToggle() {
       darkTheme = !darkTheme;
@@ -123,13 +122,6 @@ export default {
           border-bottom-color var(--rainbow-3)
         &.github
           border-bottom-color var(--rainbow-4)
-    .permalink
-      display inline-flex
-      align-items center
-      object
-        width 1rem
-        height 1rem
-        margin-left 0.25rem
 .logo
     display flex
     align-items center
