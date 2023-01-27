@@ -4,7 +4,6 @@ const projects = require("./data/projects");
 module.exports = {
   title: "cary-mao",
   description: "My blog",
-  base: "/cary-mao/",
   head: [["link", { ref: "icon", type: "image/x-icon", href: "/favicon.ico" }]],
   themeConfig: {
     logoText: "Cary Mao",
