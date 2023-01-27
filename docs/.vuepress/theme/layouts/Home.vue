@@ -3,10 +3,5 @@
 </template>
 
 <script>
-export default {
-  created() {
-    console.log(1);
-    console.log(this.$site.pages, this.$page);
-  },
-};
+export default {};
 </script>

@@ -5,6 +5,8 @@ module.exports = {
   title: "cary-mao",
   description: "My blog",
   base: "/cary-mao/",
+  dest: "dist",
+  head: [["link", { ref: "icon", type: "image/x-icon", href: "/favicon.ico" }]],
   themeConfig: {
     logoText: "Cary Mao",
     logoTitle: "Cary Mao website",
