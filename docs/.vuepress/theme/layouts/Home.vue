@@ -1,7 +1,124 @@
 <template>
-  <div>Home</div>
+  <div class="home">
+    <Content />
+    <div class="hero">
+      <header>
+        <Content slot-key="heroHead" />
+      </header>
+      <div>
+        <Content slot-key="heroImg" />
+      </div>
+    </div>
+    <section class="home-part">
+      <h2 class="home-heading">
+        Latest Posts
+        <router-link class="button" :to="$withBase('/blog/')"
+          >View All</router-link
+        >
+      </h2>
+      <ul class="post-list">
+        <li v-for="post in posts" :key="post.title">
+          <router-link class="post-link" :to="post.path">
+            <h3>{{ post.title }}</h3>
+            <span class="post-time">{{ format(post.birthtime) }}</span>
+          </router-link>
+        </li>
+      </ul>
+    </section>
+    <section class="home-part">
+      <h2 class="home-heading">
+        Collections
+        <router-link class="button" :to="$withBase('/blog/')"
+          >View All</router-link
+        >
+      </h2>
+      <ul class="post-list">
+        <li v-for="post in posts" :key="post.title">
+          <router-link class="post-link" :to="post.path">
+            <h3>{{ post.title }}</h3>
+            <span class="post-time">{{ post.birthtime }}</span>
+          </router-link>
+        </li>
+      </ul>
+    </section>
+    <section class="home-part">
+      <h2 class="home-heading">
+        Projects
+        <router-link class="button" :to="$withBase('/projects/')"
+          >View All</router-link
+        >
+      </h2>
+      <div class="projects">
+        <div class="project-wrap">
+          <ProjectCard
+            v-for="project in projects"
+            :key="project.name"
+            v-bind="project"
+            :star="0"
+            :fork="0"
+          />
+        </div>
+      </div>
+    </section>
+  </div>
 </template>
 
 <script>
-export default {};
+import { getPosts } from "../util";
+import ProjectCard from "../components/ProjectCard.vue";
+import { getProjectsList } from "../util";
+import dayjs from "dayjs/esm";
+
+export default {
+  components: {
+    ProjectCard,
+  },
+  data() {
+    return {
+      projects: [],
+    };
+  },
+  computed: {
+    posts() {
+      return getPosts(this.$site.pages)
+        .slice(0, 6)
+        .sort((a, b) => b.birthtimeMs - a.birthtimeMs);
+    },
+  },
+  methods: {
+    format(date) {
+      return dayjs(date).format("MM-DD");
+    },
+  },
+  async created() {
+    this.projects = await getProjectsList(this.$themeConfig);
+  },
+};
 </script>
+
+<style lang="stylus">
+h2.home-heading
+  display flex
+  justify-content space-between
+  font-size 2rem
+.home
+  &-part
+    margin-bottom 6rem
+  .hero
+    display flex
+    align-items center
+    justify-content space-between
+    img
+      max-width 400px
+    h1
+      font-size 3rem
+    p
+      max-width var(--content-width--medium)
+      font-size 1.2rem
+  p
+    -webkit-font-smoothing auto
+    font-size 1.05rem
+    line-height 1.625
+    font-weight 500
+    margin-bottom 1.5rem
+</style>

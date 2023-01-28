@@ -1,6 +1,6 @@
 <template>
   <div>
-    <h1>Projects</h1>
+    <h1>Collections</h1>
     <div class="projects">
       <div
         class="project-wrap"

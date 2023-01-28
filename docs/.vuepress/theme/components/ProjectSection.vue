@@ -22,7 +22,7 @@
 
 <script>
 import ProjectCard from "./ProjectCard.vue";
-import { getGithubRepos } from "../util";
+import { getProjectsList } from "../util";
 
 export default {
   components: { ProjectCard },
@@ -37,19 +37,7 @@ export default {
     this.projects = this.$themeConfig.projects;
 
     // async render
-    const repos = await getGithubRepos(this.$themeConfig.githubUser);
-    this.projects.forEach((project) => {
-      const repo = repos.find((repo) => repo.name === project.project);
-      // this.$set(project, "fullLang", normalizeLang(project.lang));
-      // this.$set(project, "link", repo.html_url);
-      // this.$set(project, "star", repo.stargazers_count);
-      // this.$set(project, "fork", repo.forks_count);
-      Object.assign(project, {
-        link: repo.html_url,
-        star: repo.stargazers_count,
-        fork: repo.forks_count,
-      });
-    });
+    this.projects = await getProjectsList(this.$themeConfig);
   },
 };
 </script>

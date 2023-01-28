@@ -35,3 +35,18 @@ export function getGithubRepos(user) {
     return repos;
   });
 }
+
+// projects is from data/projects.js
+export async function getProjectsList(themeConfig) {
+  const repos = await getGithubRepos(themeConfig.githubUser);
+  return themeConfig.projects.map((project) => {
+    const repo = repos.find((repo) => repo.name === project.project);
+    return {
+      ...project,
+      name: project.project,
+      link: repo.html_url,
+      star: repo.stargazers_count,
+      fork: repo.forks_count,
+    };
+  });
+}
