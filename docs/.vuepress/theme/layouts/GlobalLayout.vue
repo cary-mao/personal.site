@@ -14,7 +14,7 @@
 import GlobalHeader from "../components/Header.vue";
 import GlobalFooter from "../components/Footer.vue";
 import Posts from "../layouts/Posts.vue";
-import Projects from "./Projects.vue";
+import Projects from "./projects/Projects.vue";
 
 export default {
   components: {

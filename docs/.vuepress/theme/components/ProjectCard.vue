@@ -70,7 +70,6 @@ export default {
 .project
     display flex
     flex-direction column
-    flex-grow 1
     padding 1.5rem
     background-color var(--card-background-color)
     h3

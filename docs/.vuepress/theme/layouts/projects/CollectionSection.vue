@@ -19,7 +19,7 @@
 </template>
 
 <script>
-import ProjectCard from "./ProjectCard.vue";
+import ProjectCard from "../../components/ProjectCard.vue";
 
 export default {
   components: { ProjectCard },

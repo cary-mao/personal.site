@@ -46,6 +46,11 @@ module.exports = (opts, ctx) => {
         });
       },
     },
+    alias() {
+      return {
+        "@theme": __dirname,
+      };
+    },
   };
 
   // ctx.addPage({

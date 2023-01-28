@@ -48,8 +48,8 @@
           >View All</router-link
         >
       </h2>
-      <div class="projects">
-        <div class="project-wrap">
+      <div class="grid">
+        <div class="grid-3">
           <ProjectCard
             v-for="project in projects"
             :key="project.name"

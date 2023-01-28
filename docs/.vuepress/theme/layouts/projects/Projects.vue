@@ -6,8 +6,8 @@
 </template>
 
 <script>
-import ProjectSection from "../components/ProjectSection.vue";
-import CollectionSection from "../components/CollectionSection.vue";
+import ProjectSection from "./ProjectSection.vue";
+import CollectionSection from "./CollectionSection.vue";
 
 export default {
   name: "Projects",
@@ -19,14 +19,13 @@ export default {
 </script>
 
 <style lang="stylus">
+@import '~@theme/styles/grid.styl';
+
 .projects
-    display flex
-    flex-wrap wrap
+    @extend .grid
     &-part
       margin-bottom 1rem
 
 .project-wrap
-    display flex
-    flex-basis 33.3%
-    padding .5rem
+    @extend .grid-3, .grid-stretch
 </style>

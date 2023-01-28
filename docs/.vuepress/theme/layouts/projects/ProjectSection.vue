@@ -21,8 +21,8 @@
 </template>
 
 <script>
-import ProjectCard from "./ProjectCard.vue";
-import { getProjectsList } from "../util";
+import ProjectCard from "../../components/ProjectCard.vue";
+import { getProjectsList } from "@theme/util";
 
 export default {
   components: { ProjectCard },

@@ -3,7 +3,7 @@
         "target": "ES5",
         "baseUrl": "docs/.vuepress",
         "paths": {
-            "theme": ["docs/.vuepress/theme"]
+            "@theme": ["docs/.vuepress/theme"]
         }
     },
     "exclude": [
