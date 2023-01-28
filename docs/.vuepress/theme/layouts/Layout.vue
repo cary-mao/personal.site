@@ -18,8 +18,3 @@ export default {
   },
 };
 </script>
-
-<style lang="stylus">
-.post
-  max-width 840px
-</style>

@@ -14,5 +14,8 @@
     "include": [
         "docs/.vuepress/theme/**/*.js",
         "docs/.vuepress/theme/**/*.vue"
-    ]
+    ],
+    "vueCompilerOptions": {
+        "target": 2
+    }
 }

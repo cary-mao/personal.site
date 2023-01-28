@@ -1,5 +1,6 @@
 @import '~normalize.css'
 @import './grid.styl'
+@import './post.styl'
 @import './new-moon.styl'
 
 @font-face
@@ -130,6 +131,8 @@ body
     color var(--font-color-base)
     background-color var(--background-color)
     font-family var(--font-family-base)
+img
+    width 100%
 .layout
     display flex
     flex-direction column
@@ -169,8 +172,8 @@ body
     white-space nowrap
 // components
 .sidebar
-    max-width 250px
-    min-width 250px
+    width 300px
+    margin-left 6rem
 .button
     display inline-flex
     align-items center

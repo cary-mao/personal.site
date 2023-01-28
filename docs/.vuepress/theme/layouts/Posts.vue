@@ -112,7 +112,6 @@ export default {
   &-time
     color var(--post-time-color)
 .posts
-  max-width 840px
   flex 1
   &-count
     font-weight 500

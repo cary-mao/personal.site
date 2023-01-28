@@ -23,7 +23,6 @@ export default {
   },
   methods: {
     toggleSubNav() {
-      console.log(this.headers);
       this.show = !this.show;
     },
   },

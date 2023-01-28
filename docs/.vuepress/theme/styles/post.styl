@@ -1,0 +1,49 @@
+$alert
+    border 1px solid var(--indigo-light)
+    border-left 1px solid var(--indigo-light)
+    border-left-width 6px
+    border-radius var(--border-radius)
+    margin 2rem 0
+    padding 1.5rem
+    :last-child
+        margin 0
+.post
+    flex 1
+    h1
+        font-size 3rem
+    p
+        line-height 1.625
+        margin-bottom 1.5rem
+    ul
+        padding-left 1.5rem
+    li
+        line-height 1.5
+        margin-bottom 0.5rem
+        padding-left 0.25rem
+        &::marker
+            color var(--marker)
+            font-size 1.1rem
+            line-height 1
+    blockquote
+        @extend $alert
+        background var(--blockquote-background)
+    .custom-block
+        background-color var(--gray-0)
+        &.tip
+            @extend $alert
+            color var(--blue)
+            border-color var(--blue)
+        &.danger
+            @extend $alert
+            color var(--red)
+            border-color var(--red)
+        &.warning
+            @extend $alert
+            color var(--yellow)
+            border-color var(--yellow)
+        &.details
+            @extend $alert
+            border 0
+            &[open]
+                summary
+                    margin-bottom 1.5rem

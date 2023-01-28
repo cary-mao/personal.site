@@ -7,22 +7,44 @@ module.exports = (opts, ctx) => {
     name: "vuepress-theme-cary",
     plugins: [
       [
-        "vuepress-plugin-container",
+        "container",
         {
           type: "tip",
-          defaultTitle: "article-block",
+          defaultTitle: {
+            "/": "TIP",
+            "/zh/": "提示",
+          },
         },
       ],
       [
-        "vuepress-plugin-container",
+        "container",
         {
           type: "warning",
+          defaultTitle: {
+            "/": "WARNING",
+            "/zh/": "注意",
+          },
         },
       ],
       [
-        "vuepress-plugin-container",
+        "container",
         {
           type: "danger",
+          defaultTitle: {
+            "/": "DANGER",
+            "/zh/": "警告",
+          },
+        },
+      ],
+      [
+        "container",
+        {
+          type: "details",
+          before: (info) =>
+            `<details class="custom-block details">${
+              info ? `<summary>${info}</summary>` : ""
+            }\n`,
+          after: () => "</details>\n",
         },
       ],
       "@vuepress/nprogress",
