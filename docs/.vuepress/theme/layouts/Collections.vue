@@ -43,11 +43,11 @@
           >
             <h3>
               {{ collection.title }}
-              <span class="tag">{{ collection.type }}</span>
+              <span class="c-tag">{{ collection.type }}</span>
             </h3>
             <div>
               <span
-                class="tag"
+                class="c-tag"
                 v-for="tag in collection.tags.slice(0, 5)"
                 :key="tag"
               >
