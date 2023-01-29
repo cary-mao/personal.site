@@ -11,3 +11,16 @@
         width 33.3%
         // gap
         padding 0.5rem
+        @media screen and (max-width 1024px)
+            width 50%
+        @media screen and (max-width 768px)
+            width 100%
+.column-2
+    display flex
+    @media screen and (max-width 1024px)
+        display block
+    &-stretch
+        flex 1
+    &-fixed
+        flex-grow 0
+        flex-shrink 0

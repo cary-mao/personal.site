@@ -5,7 +5,7 @@
       <header>
         <Content slot-key="heroHead" />
       </header>
-      <div>
+      <div class="hero-img-wrap">
         <Content slot-key="heroImg" />
       </div>
     </div>
@@ -115,8 +115,11 @@ h2.home-heading
     display flex
     align-items center
     justify-content space-between
-    img
+    &-img-wrap
       max-width 400px
+      @media screen and (max-width: 768px) {
+        display none
+      }
     h1
       font-size 3rem
     p

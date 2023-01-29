@@ -6,8 +6,8 @@
       </p>
     </div>
     <h1>{{ heading }}</h1>
-    <div class="flex space-between">
-      <div class="posts">
+    <div class="column-2">
+      <div class="column-2-stretch">
         <div class="post-group" v-for="(group, title) in groupMap" :key="title">
           <h2>{{ title }}</h2>
           <ul class="post-list">
@@ -20,7 +20,7 @@
           </ul>
         </div>
       </div>
-      <PostsSidebar />
+      <PostsSidebar class="column-2-fixed" />
     </div>
   </div>
 </template>

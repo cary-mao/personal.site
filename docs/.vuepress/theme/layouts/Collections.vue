@@ -2,7 +2,7 @@
   <div id="collections">
     <h1>Collections</h1>
     <div class="toolbar">
-      <div>
+      <div class="search-box">
         <input
           class="input"
           type="text"
@@ -162,6 +162,9 @@ export default {
                 margin-top calc(0.12rem + 1px)
                 margin-left .5rem
                 border-top-color #fff
+            @media screen and (max-width: 1024px) {
+              padding: 0.5rem 1rem;
+            }
     .filter-box
         position relative
         .tags-selector
@@ -179,8 +182,24 @@ export default {
                 margin-bottom .5rem
                 input[type=checkbox]
                     margin-right .25rem
+    .search-box
+      @media screen and (max-width: 768px) {
+        flex 1
+        display flex
+      }
+      .input
+          flex-grow 1
     .post-link
-        h2
+        @media screen and (max-width: 768px) {
+          display block
+          padding 1.25rem
+          margin-bottom 1rem
+          background-color #fff
+        }
+        h3
             display flex
             align-items center
+            @media screen and (max-width: 768px) {
+              margin-bottom 1rem
+            }
 </style>

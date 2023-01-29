@@ -138,8 +138,11 @@ img
     flex-direction column
     min-height 100vh
 .container
-    margin auto
     max-width var(--content-width)
+    margin auto
+    padding 0 2rem
+    @media (max-width 1024px)
+        width auto
 ::-webkit-scrollbar
     position absolute
     right 0
@@ -174,6 +177,9 @@ img
 .sidebar
     width 300px
     margin-left 6rem
+    @media screen and (max-width 1024px)
+        width 100%
+        margin-left 0
 .button
     display inline-flex
     align-items center

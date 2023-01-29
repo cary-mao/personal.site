@@ -1,7 +1,7 @@
 <template>
-  <div id="about" class="flex space-bewteen">
-    <Content class="post" />
-    <div class="sidebar">
+  <div id="about" class="column-2">
+    <Content class="post column-2-stretch" />
+    <div class="sidebar column-2-fixed">
       <div class="card-dl">
         <div class="card-dt">
           <h2>POSTER</h2>
