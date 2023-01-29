@@ -34,6 +34,13 @@
               :class="{ active: $route.path === '/projects' }"
               >projects</router-link
             >
+            <router-link
+              to="/collections"
+              class="collections"
+              :class="{ active: $route.path === '/collections' }"
+            >
+              collections
+            </router-link>
             <Permalink
               to="https://github.com/cary-mao"
               class="github"
@@ -72,6 +79,7 @@ function createThemeTag(url) {
 
 export default {
   components: {
+    Permalink,
     Permalink,
   },
   methods: {
@@ -120,8 +128,10 @@ export default {
           border-bottom-color var(--rainbow-2)
         &.projects
           border-bottom-color var(--rainbow-3)
-        &.github
+        &.collections
           border-bottom-color var(--rainbow-4)
+        &.github
+          border-bottom-color var(--rainbow-5)
 .logo
     display flex
     align-items center

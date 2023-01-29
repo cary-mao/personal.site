@@ -15,6 +15,7 @@ import GlobalHeader from "../components/Header.vue";
 import GlobalFooter from "../components/Footer.vue";
 import Posts from "../layouts/Posts.vue";
 import Projects from "./projects/Projects.vue";
+import Collections from "./Collections.vue";
 
 export default {
   components: {
@@ -22,6 +23,7 @@ export default {
     GlobalFooter,
     Posts,
     Projects,
+    Collections,
   },
   computed: {
     layout() {
