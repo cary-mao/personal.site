@@ -1,6 +1,6 @@
 [build]
-base = "/"
-publish = "docs/.vuepress/dist/"
+base = "./"
+publish = "./docs/.vuepress/dist/"
 command = "npm run docs:build"
 
 [[redirects]]
