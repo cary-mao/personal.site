@@ -4,7 +4,7 @@
     <div class="projects">
       <div
         class="project-wrap"
-        v-for="library in Libraries"
+        v-for="library in libraries"
         :key="library.project"
       >
         <ProjectCard
@@ -24,8 +24,8 @@ import ProjectCard from "../../components/ProjectCard.vue";
 export default {
   components: { ProjectCard },
   computed: {
-    collections() {
-      return this.$themeConfig.library;
+    libraries() {
+      return this.$themeConfig.libraries;
     },
   },
 };
