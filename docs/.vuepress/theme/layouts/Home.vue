@@ -90,7 +90,14 @@ export default {
       return dayjs(date).format("MM-DD");
     },
   },
-  async created() {
+
+  created() {
+    // first render
+    this.projects = this.$themeConfig.projects;
+  },
+
+  async mounted() {
+    // async render
     this.projects = await getProjectsList(this.$themeConfig);
   },
 };

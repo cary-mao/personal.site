@@ -32,10 +32,12 @@ export default {
     };
   },
 
-  async created() {
+  created() {
     // first render
     this.projects = this.$themeConfig.projects;
+  },
 
+  async mounted() {
     // async render
     this.projects = await getProjectsList(this.$themeConfig);
   },
