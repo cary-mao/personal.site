@@ -1,19 +1,19 @@
 <template>
   <div>
     <ProjectSection />
-    <CollectionSection />
+    <LibrariesSection />
   </div>
 </template>
 
 <script>
 import ProjectSection from "./ProjectSection.vue";
-import CollectionSection from "./CollectionSection.vue";
+import LibrariesSection from "./LibrariesSection.vue";
 
 export default {
   name: "Projects",
   components: {
     ProjectSection,
-    CollectionSection,
+    LibrariesSection,
   },
 };
 </script>

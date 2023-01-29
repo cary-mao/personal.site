@@ -1,17 +1,17 @@
 <template>
   <div>
-    <h1>Collections</h1>
+    <h1>Libraries</h1>
     <div class="projects">
       <div
         class="project-wrap"
-        v-for="collection in collections"
-        :key="collection.project"
+        v-for="library in Libraries"
+        :key="library.project"
       >
         <ProjectCard
-          :name="collection.project"
-          :desc="collection.desc"
-          :lang="collection.lang"
-          :link="collection.link"
+          :name="library.project"
+          :desc="library.desc"
+          :lang="library.lang"
+          :link="library.link"
         />
       </div>
     </div>
@@ -25,7 +25,7 @@ export default {
   components: { ProjectCard },
   computed: {
     collections() {
-      return this.$themeConfig.collections;
+      return this.$themeConfig.library;
     },
   },
 };
