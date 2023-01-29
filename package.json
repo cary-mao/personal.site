@@ -7,7 +7,8 @@
     "docs:dev": "vuepress dev docs --temp .temp",
     "docs:build": "vuepress build docs",
     "lint": "eslint --cache --ext .js,.vue docs/.vuepress",
-    "fix": "eslint --cache --ext .js,.vue docs/.vuepress --fix"
+    "fix": "eslint --cache --ext .js,.vue docs/.vuepress --fix",
+    "postinstall": "patch-package"
   },
   "lint-staged": {
     "docs/.vuepress/**/*.{vue|js}": "npm run lint"
@@ -29,6 +30,7 @@
     "lint-staged": "^13.1.0",
     "markdown-it-anchor": "^8.6.6",
     "markdown-it-prism": "^2.3.0",
+    "patch-package": "^6.5.1",
     "vuepress": "^1.9.8",
     "vuepress-plugin-container": "^2.1.5",
     "vuepress-plugin-smooth-scroll": "^0.0.10"

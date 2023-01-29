@@ -1,0 +1,18 @@
+diff --git a/node_modules/@vuepress/shared-utils/lib/extractHeaders.js b/node_modules/@vuepress/shared-utils/lib/extractHeaders.js
+index 063fd3b..7dfafd4 100644
+--- a/node_modules/@vuepress/shared-utils/lib/extractHeaders.js
++++ b/node_modules/@vuepress/shared-utils/lib/extractHeaders.js
+@@ -23,7 +23,12 @@ module.exports = function (content, include = [], md) {
+     const res = [];
+     tokens.forEach((t, i) => {
+         if (t.type === 'heading_open' && include.includes(t.tag)) {
+-            const title = tokens[i + 1].content;
++            const inlineToken = tokens[i + 1]
++            // to support permalinks.headerlink of markdonw-it-anchor
++            let title = inlineToken.content;
++            if (!title && inlineToken.children[0].type === 'link_open') {
++                title = inlineToken.children[1].content
++            }
+             const slug = t.attrs.find(([name]) => name === 'id')[1];
+             res.push({
+                 level: parseInt(t.tag.slice(1), 10),

@@ -13,8 +13,5 @@ export default {
   components: {
     Sidebar,
   },
-  created() {
-    console.log(this.$page);
-  },
 };
 </script>
