@@ -1,7 +1,7 @@
 <template>
   <header id="header">
-    <div class="container flex space-between">
-      <div>
+    <div class="container">
+      <div class="navigation">
         <!-- logo -->
         <div class="logo" :title="$themeConfig.logoTitle">
           <img
@@ -107,6 +107,10 @@ export default {
 #header
   height var(--navbar-height-large)
   padding-top 3rem
+  background-color var(--background-color)
+  .container
+    display flex
+    justify-content space-between
   .nav
     display flex
     padding-top 1.25rem
@@ -148,9 +152,36 @@ export default {
 .theme-toggle
   display flex
   align-items center
-  .button
+  button
     padding 0.5rem
   img
     width 20px
     height 20px
+  @media screen and (max-width: 768px)
+    position: absolute;
+    top: 50%;
+    right: 1rem;
+    margin-top: -0.725rem;
+    .button
+      padding 0.25rem
+
+@media screen and (max-width: 768px)
+  .logo
+    display none
+  #header
+    position fixed
+    display flex
+    align-items center
+    padding-top 0
+    height var(--navbar-height-small)
+    .container
+      padding 0
+    .navigation
+      overflow: hidden
+      width 100%
+      padding 0 1rem
+    .nav
+      overflow auto
+      &::-webkit-scrollbar
+        display none
 </style>

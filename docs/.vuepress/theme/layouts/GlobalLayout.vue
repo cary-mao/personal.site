@@ -47,4 +47,7 @@ export default {
 main
   flex 1 1
   margin-top 6rem
+  @media screen and (max-width: 768px) {
+    margin-top var(--navbar-height-small)
+  }
 </style>

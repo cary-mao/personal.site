@@ -127,6 +127,9 @@
 // base
 *, *::before, *::after
     box-sizing border-box
+@media screen and (max-width 768px)
+    html
+        font-size 14px
 body
     color var(--font-color-base)
     background-color var(--background-color)
@@ -143,6 +146,9 @@ img
     padding 0 2rem
     @media (max-width 1024px)
         width auto
+    @media (max-width 768px)
+        width 100vw
+        padding 0 1rem
 ::-webkit-scrollbar
     position absolute
     right 0
