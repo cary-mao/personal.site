@@ -17,36 +17,42 @@
         <nav>
           <div class="nav">
             <router-link
+              to="/"
+              class="home"
+              :class="{ active: $route.path === '/' }"
+              >Home</router-link
+            >
+            <router-link
               to="/about"
               class="about"
               :class="{ active: $route.path === '/about' }"
-              >about</router-link
+              >About</router-link
             >
             <router-link
               to="/blog"
               class="blog"
               :class="{ active: $route.path === '/blog' }"
-              >blog</router-link
+              >Blog</router-link
             >
             <router-link
               to="/projects"
               class="projects"
               :class="{ active: $route.path === '/projects' }"
-              >projects</router-link
+              >Projects</router-link
             >
             <router-link
               to="/collections"
               class="collections"
               :class="{ active: $route.path === '/collections' }"
             >
-              collections
+              Collections
             </router-link>
             <Permalink
               to="https://github.com/cary-mao"
               class="github"
               :class="{ active: $route.path === '/github' }"
             >
-              github
+              Github
             </Permalink>
           </div>
         </nav>
@@ -126,6 +132,8 @@ export default {
         color var(--navbar-color-hover)
       &.active,
       &:hover
+        &.home
+          border-bottom-color var(--rainbow-6)
         &.about
           border-bottom-color var(--rainbow-1)
         &.blog
@@ -183,6 +191,7 @@ export default {
       padding 0 1rem
     .nav
       overflow auto
+      padding-right: 1rem;
       &::-webkit-scrollbar
         display none
 </style>
