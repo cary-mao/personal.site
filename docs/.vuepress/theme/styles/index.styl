@@ -124,6 +124,11 @@
     --highlight-code-color rgb(116, 207, 116, 0.2)
     --sidebar-nav-background-color #fff
     --fork var(--gray-7)
+    --post-custom-block-background var(--gray-0)
+    --input-background #fff
+    --input-font-color var(--font-color-base)
+    --collection-background #fff
+    --select-background #fff
 // base
 *, *::before, *::after
     box-sizing border-box
@@ -217,6 +222,11 @@ img
         padding 0.5rem
         text-decoration none
         color var(--font-color-heading)
+.input
+    color var(--input-font-color)
+    background-color var(--input-background)
+    &::placeholder
+        color var(--input-font-color)
 // content
 .header-anchor
     text-decoration none

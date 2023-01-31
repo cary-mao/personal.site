@@ -170,6 +170,7 @@ export default {
     display none
   #header
     position fixed
+    z-index 1
     display flex
     align-items center
     padding-top 0

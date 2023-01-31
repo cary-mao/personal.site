@@ -58,4 +58,9 @@
   --code-link-hover: var(--link-hover-color);
   --highlight-code-color: rgb(116, 207, 136, 0.1);
   --fork: var(--blue-1);
+  --post-custom-block-background: var(--blockquote-background);
+  --input-background: var(--gray-65);
+  --input-font-color: #fff;
+  --collection-background: var(--gray-65);
+  --select-background: var(--gray-65);
 }

@@ -42,7 +42,7 @@
             rel="noopener noreferer"
           >
             <h3>
-              {{ collection.title }}
+              <span class="ellipsis">{{ collection.title }}</span>
               <span class="c-tag">{{ collection.type }}</span>
             </h3>
             <div>
@@ -173,7 +173,7 @@ export default {
             min-width 250px
             max-height 300px
             padding 1rem
-            background-color #fff
+            background-color var(--select-background)
             // border: 1px solid var(--gray-6)
             box-shadow 0 0 2px var(--gray-6)
             label
@@ -190,11 +190,11 @@ export default {
       .input
           flex-grow 1
     .post-link
+        background-color var(--collection-background)
         @media screen and (max-width: 768px) {
           display block
           padding 1.25rem
           margin-bottom 1rem
-          background-color #fff
         }
         h3
             display flex
