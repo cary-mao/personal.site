@@ -1,5 +1,5 @@
 <template>
-  <div class="flex space-between">
+  <div class="post-layout">
     <Content class="post" />
     <Sidebar />
   </div>
@@ -15,3 +15,15 @@ export default {
   },
 };
 </script>
+
+<style lang="stylus">
+.post-layout
+  display flex
+  justify-content space-between
+  @media screen and (max-width: 1024px)
+    display block
+    .sidebar
+      display none
+    h1
+      font-size 2rem
+</style>

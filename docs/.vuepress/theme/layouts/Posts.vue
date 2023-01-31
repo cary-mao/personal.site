@@ -112,10 +112,12 @@ export default {
   &-time
     color var(--post-time-color)
 .posts
-  flex 1
   &-count
     font-weight 500
     color var(--highlight-color)
+  @media screen and (max-width: 768px)
+    .sidebar
+      display none
 
 .sub-title
   margin-bottom .5rem
