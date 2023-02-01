@@ -52,9 +52,8 @@
         >
       </h2>
       <div class="grid">
-        <div class="grid-3">
+        <div class="grid-3" v-for="project in projects">
           <ProjectCard
-            v-for="project in projects"
             :key="project.name"
             v-bind="project"
             :star="0"
