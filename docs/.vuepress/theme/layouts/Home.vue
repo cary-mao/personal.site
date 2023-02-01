@@ -36,7 +36,7 @@
         <li v-for="post in posts" :key="post.title">
           <router-link class="post-link" :to="post.path">
             <h3>{{ post.title }}</h3>
-            <span class="post-time">{{ post.birthtime }}</span>
+            <span class="post-time">{{ format(post.birthtime) }}</span>
           </router-link>
         </li>
       </ul>

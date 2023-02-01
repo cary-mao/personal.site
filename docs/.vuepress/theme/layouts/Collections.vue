@@ -195,6 +195,7 @@ export default {
           display block
           padding 1.25rem
           margin-bottom 1rem
+          background-color #fff
         }
         h3
             display flex
