@@ -16,4 +16,12 @@
 
 <script></script>
 
-<style lang="stylus"></style>
+<style lang="stylus">
+#about
+  p
+    -webkit-font-smoothing: auto;
+    font-size: 1.05rem;
+    line-height: 1.625;
+    font-weight: 500;
+    margin-bottom: 1.5rem;
+</style>

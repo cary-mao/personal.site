@@ -28,16 +28,19 @@
     <section class="home-part">
       <h2 class="home-heading">
         Collections
-        <router-link class="button" :to="$withBase('/blog/')"
+        <router-link class="button" :to="$withBase('/collections/')"
           >View All</router-link
         >
       </h2>
       <ul class="post-list">
-        <li v-for="post in posts" :key="post.title">
-          <router-link class="post-link" :to="post.path">
-            <h3>{{ post.title }}</h3>
-            <span class="post-time">{{ format(post.birthtime) }}</span>
-          </router-link>
+        <li v-for="collection in collections" :key="collection.title">
+          <Permalink class="post-link" :to="collection.link">
+            <h3 class="ellipsis">{{ collection.title }}</h3>
+            <!-- <span class="post-time">{{ format(post.birthtime) }}</span> -->
+            <template slot="icon">
+              <span>{{ collection.type }}</span>
+            </template>
+          </Permalink>
         </li>
       </ul>
     </section>
@@ -68,10 +71,12 @@ import { getPosts } from "../util";
 import ProjectCard from "../components/ProjectCard.vue";
 import { getProjectsList } from "../util";
 import dayjs from "dayjs/esm";
+import Permalink from "@theme/components/Permalink.vue";
 
 export default {
   components: {
     ProjectCard,
+    Permalink,
   },
   data() {
     return {
@@ -83,6 +88,9 @@ export default {
       return getPosts(this.$site.pages)
         .slice(0, 6)
         .sort((a, b) => b.birthtimeMs - a.birthtimeMs);
+    },
+    collections() {
+      return this.$themeConfig.collections;
     },
   },
   methods: {

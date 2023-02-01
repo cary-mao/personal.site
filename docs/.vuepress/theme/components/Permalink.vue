@@ -1,7 +1,13 @@
 <template>
   <a :href="to" class="permalink" target="_blank" rel="noopener noreferrer">
     <slot></slot>
-    <object :data="$withBase('/permalink.svg')" type="image/svg+xml"></object>
+    <slot name="icon">
+      <object
+        v-if="showIcon"
+        :data="$withBase('/permalink.svg')"
+        type="image/svg+xml"
+      ></object>
+    </slot>
   </a>
 </template>
 
@@ -11,6 +17,10 @@ export default {
   name: "Permalink",
   props: {
     to: String,
+    showIcon: {
+      type: Boolean,
+      default: true,
+    },
   },
 };
 </script>
