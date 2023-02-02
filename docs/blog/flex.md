@@ -16,6 +16,7 @@ flex-direction: row;
 align-items: strektch;
 flex-grow: 0;
 flex-shrink: 1;
+flex-basis: auto; /* because the value of width is auto default */
 flex-wrap: nowrap;
 justify-content: flex-start;
 ```
@@ -122,3 +123,44 @@ By default, the long text will overflow in flex layout. Here has three ways to f
 > 1. set *min-width: 0* tells the browser that it can shrink as long as it's width longer than 0.
 > 2. set *overflow: auto** tells the browser that it can shrink with scrolling box and make other items show as possible.
 > 3. set ellipsis style tells the browser that it can shrink with text-overflow and make other items show as possible.
+
+## navbar in mobile
+```html
+<head>
+    <meta name="viewport" content="width=device-width, user-scalable=no" />
+</head>
+
+<body>
+    <div class="navigation">
+        <nav class="navbar">
+            <a href="">Home</a>
+            <a href="">Home</a>
+            <a href="">Home</a>
+            <a href="">Home</a>
+            <a href="">Home</a>
+            <a href="">Home</a>
+            <a href="">Home</a>
+            <a href="">Home</a>
+            <a href="">Home</a>
+            <a href="">Home</a>
+        </nav>
+        <div class="icon">...</div>
+    </div>
+</body>
+```
+```css
+.navigation {
+    display: flex;
+}
+
+.navbar {
+    display: flex;
+    overflow: scroll;
+    font-size: 1.01rem;
+}
+```
+The result is:
+![flex_navbar](../assets/flex_navbar.png)
+> In this case, the navbar is scrolling and don't make the icon invisible, that is because `overflow: scroll` prevent width of the navbar from overflow.
+
+By the way, if you need to fix the navbar at top, you may add **position: fixed** into the **.navigation** class，but it doesn't work well. The reason of this is the navigation out of flow and the **width: auto** can't work as normal.

@@ -166,10 +166,6 @@ export default {
     width 20px
     height 20px
   @media screen and (max-width: 768px)
-    position: absolute;
-    top: 50%;
-    right: 1rem;
-    margin-top: -0.725rem;
     .button
       padding 0.25rem
 
@@ -179,19 +175,18 @@ export default {
   #header
     position fixed
     z-index 1
-    display flex
-    align-items center
-    padding-top 0
+    width: 100%
     height var(--navbar-height-small)
+    padding-top 0
     .container
-      padding 0
+      height 100%
     .navigation
-      overflow: hidden
-      width 100%
-      padding 0 1rem
-    .nav
-      overflow auto
-      padding-right: 1rem;
+      display flex
+      overflow: auto
       &::-webkit-scrollbar
         display none
+      .nav
+        padding-top 0
+        height 100%
+        align-items center
 </style>
