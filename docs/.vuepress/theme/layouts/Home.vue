@@ -38,7 +38,7 @@
             <h3 class="ellipsis">{{ collection.title }}</h3>
             <!-- <span class="post-time">{{ format(post.birthtime) }}</span> -->
             <template slot="icon">
-              <span>{{ collection.type }}</span>
+              <span class="post-time">{{ collection.type }}</span>
             </template>
           </Permalink>
         </li>
