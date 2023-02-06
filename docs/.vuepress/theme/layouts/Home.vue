@@ -20,7 +20,9 @@
         <li v-for="post in posts" :key="post.title">
           <router-link class="post-link" :to="post.path">
             <h3>{{ post.title }}</h3>
-            <span class="post-time">{{ format(post.lastUpdated) }}</span>
+            <span class="post-time">{{
+              format(post.lastUpdatedTimestamp)
+            }}</span>
           </router-link>
         </li>
       </ul>
@@ -84,9 +86,10 @@ export default {
   },
   computed: {
     posts() {
+      window.posts = getPosts(this.$site.pages);
       return getPosts(this.$site.pages)
         .slice(0, 6)
-        .sort((a, b) => b.lastUpdated - a.lastUpdated);
+        .sort((a, b) => b.lastUpdatedTimestamp - a.lastUpdatedTimestamp);
     },
     collections() {
       return this.$themeConfig.collections;

@@ -15,7 +15,7 @@
               <router-link :to="page.path" class="post-link">
                 <h3>{{ page.title }}</h3>
                 <span class="post-time">{{
-                  formatDate(page.lastUpdated)
+                  formatDate(page.lastUpdatedTimestamp)
                 }}</span>
               </router-link>
             </li>
@@ -45,7 +45,7 @@ export default {
         .filter(this.postFilter)
         .sort(this.postSort)
         .forEach(($page) => {
-          const year = dayjs($page.lastUpdated).format("YYYY");
+          const year = dayjs($page.lastUpdatedTimestamp).format("YYYY");
           if (!groupMap[year]) {
             groupMap[year] = [];
           }
@@ -75,7 +75,7 @@ export default {
       return true;
     },
     postSort(a, b) {
-      return b.lastUpdated - a.lastUpdated;
+      return b.lastUpdatedTimestamp - a.lastUpdatedTimestamp;
     },
     formatDate(timestamp) {
       return dayjs(timestamp).format("YYYY-MM-DD");
@@ -90,7 +90,7 @@ export default {
     },
   },
   created() {
-    console.log(this.$page.lastUpdated);
+    console.log(this.$page.lastUpdatedTimestamp);
   },
 };
 </script>
