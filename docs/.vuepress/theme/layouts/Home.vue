@@ -86,7 +86,6 @@ export default {
   },
   computed: {
     posts() {
-      window.posts = getPosts(this.$site.pages);
       return getPosts(this.$site.pages)
         .slice(0, 6)
         .sort((a, b) => b.lastUpdatedTimestamp - a.lastUpdatedTimestamp);
