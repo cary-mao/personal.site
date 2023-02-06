@@ -20,7 +20,7 @@
         <li v-for="post in posts" :key="post.title">
           <router-link class="post-link" :to="post.path">
             <h3>{{ post.title }}</h3>
-            <span class="post-time">{{ format(post.birthtime) }}</span>
+            <span class="post-time">{{ format(post.lastUpdated) }}</span>
           </router-link>
         </li>
       </ul>
@@ -69,7 +69,7 @@
 import { getPosts } from "../util";
 import ProjectCard from "../components/ProjectCard.vue";
 import { getProjectsList } from "../util";
-import dayjs from "dayjs/esm";
+import { extendedDayjs } from "../util";
 import Permalink from "@theme/components/Permalink.vue";
 
 export default {
@@ -86,7 +86,7 @@ export default {
     posts() {
       return getPosts(this.$site.pages)
         .slice(0, 6)
-        .sort((a, b) => b.birthtimeMs - a.birthtimeMs);
+        .sort((a, b) => b.lastUpdated - a.lastUpdated);
     },
     collections() {
       return this.$themeConfig.collections;
@@ -94,7 +94,7 @@ export default {
   },
   methods: {
     format(date) {
-      return dayjs(date).format("MM-DD");
+      return extendedDayjs(date).fromNow();
     },
   },
 

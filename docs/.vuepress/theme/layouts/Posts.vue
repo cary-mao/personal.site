@@ -14,7 +14,9 @@
             <li v-for="page in group" :key="page.path">
               <router-link :to="page.path" class="post-link">
                 <h3>{{ page.title }}</h3>
-                <span class="post-time">{{ page.birthtime }}</span>
+                <span class="post-time">{{
+                  formatDate(page.lastUpdated)
+                }}</span>
               </router-link>
             </li>
           </ul>
@@ -28,6 +30,7 @@
 <script>
 import PostsSidebar from "../components/PostsSidebar.vue";
 import { capitalize, getPosts } from "../util";
+import dayjs from "dayjs/esm";
 
 export default {
   name: "Posts",
@@ -42,7 +45,7 @@ export default {
         .filter(this.postFilter)
         .sort(this.postSort)
         .forEach(($page) => {
-          const year = $page.birthtime.match(/(\w{4})/)[1];
+          const year = dayjs($page.lastUpdated).format("YYYY");
           if (!groupMap[year]) {
             groupMap[year] = [];
           }
@@ -72,7 +75,10 @@ export default {
       return true;
     },
     postSort(a, b) {
-      return b.birthtimeMs - a.birthtimeMs;
+      return b.lastUpdated - a.lastUpdated;
+    },
+    formatDate(timestamp) {
+      return dayjs(timestamp).format("YYYY-MM-DD");
     },
   },
   watch: {
@@ -82,6 +88,9 @@ export default {
         document.title = `${this.heading} | ${this.$site.title}`;
       },
     },
+  },
+  created() {
+    console.log(this.$page.lastUpdated);
   },
 };
 </script>

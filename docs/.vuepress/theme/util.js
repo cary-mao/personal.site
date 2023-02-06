@@ -1,3 +1,8 @@
+import relativeTime from "dayjs/esm/plugin/relativeTime";
+import dayjs from "dayjs/esm";
+
+dayjs.extend(relativeTime);
+
 let posts;
 export function getPosts(pages) {
   if (isUndef(posts)) {
@@ -50,3 +55,5 @@ export async function getProjectsList(themeConfig) {
     };
   });
 }
+
+export const extendedDayjs = dayjs;

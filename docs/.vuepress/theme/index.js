@@ -1,4 +1,5 @@
 const defaultThemeConfig = require("./config");
+const dayjs = require("dayjs");
 
 module.exports = (opts, ctx) => {
   Object.assign(opts, defaultThemeConfig);
@@ -58,7 +59,8 @@ module.exports = (opts, ctx) => {
           headerAnchorSelector: ".header-anchor",
         },
       ],
-      require("./plugins/vuepress-plugin-filetime"),
+      // require("./plugins/vuepress-plugin-filetime"),
+      "@vuepress/plugin-last-updated",
     ],
     markdown: {
       extendMarkdown: (md) => {
