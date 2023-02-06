@@ -21,6 +21,7 @@ export default {
 <style lang="stylus">
 .catelog
   position sticky
+  top 0
   background-color var(--card-background-color)
 
   .&-content
