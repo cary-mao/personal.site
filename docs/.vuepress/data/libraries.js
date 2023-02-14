@@ -29,4 +29,10 @@ module.exports = [
     lang: "js",
     desc: "The most powerful schema description language and data validator for JavaScript",
   },
+  {
+    project: "hammer",
+    link: "http://hammerjs.github.io/",
+    lang: "js",
+    desc: "Touch gestures library for webapp",
+  },
 ];
